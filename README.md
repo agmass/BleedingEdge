@@ -15,7 +15,7 @@ This mod adds a **brand new enchantment; Bleeding Edge;** which allows you to ha
   - A syringe you can fill up with all of your effects, than use for later or hit an enemy with.
 
 ### Blood Scythe ([Requires Scythes](https://modrinth.com/mod/server-side-scythes))
-A new Scythe and hat slowly drains life from your opponents after being hit.
+A new Scythe that slowly drains life from your opponents after being hit.
 ## Resource Pack
 - Install [Polymer](https://modrinth.com/mod/polymer) (you may already have it installed as a dependency)
 - Follow [this guide](https://polymer.pb4.eu/latest/user/resource-pack-hosting/) for up-to-date details on how to host your pack for your specific scenario.
