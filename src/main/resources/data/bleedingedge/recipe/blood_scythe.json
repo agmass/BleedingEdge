@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    " RW",
+    " R "
+  ],
+  "key": {
+    "W": {
+      "item": "bleedingedge:blood_block"
+    },
+    "R": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "scythes:blood_scythe",
+    "count": 1
+  }
+}

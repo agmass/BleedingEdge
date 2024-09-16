@@ -1,0 +1,23 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bleedingedge:empty_potion_syringe"
+    ]
+  },
+  "criteria": {
+    "has_blood": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{
+          "item": "minecraft:glass"
+        }]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blood"
+    ]
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "scythes:blood_scythe",
+      "required": false
+    }
+  ]
+}

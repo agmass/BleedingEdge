@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bleedingedge:blood_eye",
+      "bleedingedge:blood_block",
+      "bleedingedge:blood_apple",
+      "bleedingedge:blood_scythe"
+    ]
+  },
+  "criteria": {
+    "has_blood": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{
+          "item": "bleedingedge:blood"
+        }]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blood"
+    ]
+  ]
+}

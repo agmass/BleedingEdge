@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "bleedingedge:blood"
+    },
+    {
+      "item": "bleedingedge:blood"
+    },
+    {
+      "item": "bleedingedge:blood"
+    },
+    {
+      "item": "bleedingedge:blood"
+    }
+  ],
+  "result": {
+    "id": "bleedingedge:blood_block",
+    "count": 1
+  }
+}

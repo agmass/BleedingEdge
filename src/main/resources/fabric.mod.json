@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "bleedingedge",
+  "version": "${version}",
+  "name": "BleedingEdge",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "LGPL-3.0",
+  "icon": "assets/bleedingedge/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "org.agmas.bleedingedge.Bleedingedge"
+    ]
+  },
+  "mixins": [
+    "bleedingedge.mixins.json",
+    {
+      "config": "bleedingedge.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
