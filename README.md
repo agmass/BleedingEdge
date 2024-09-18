@@ -36,3 +36,5 @@ Bedrock support not tested.
 ## Recipes
 
 Recipes are available in-game after obtaining Blood from the Bleeding Edge enchantment. (or gaining a stick for the blood scythe)
+
+<img alt="fabric-api" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/requires/fabric-api_vector.svg">
