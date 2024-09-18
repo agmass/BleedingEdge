@@ -1,5 +1,6 @@
 package org.agmas.bleedingedge;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.impl.util.log.Log;
 import net.fabricmc.loader.impl.util.log.LogCategory;
@@ -7,6 +8,7 @@ import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -53,6 +55,9 @@ public class BleedingEdgeItems {
         if (FabricLoader.getInstance().isModLoaded("scythes")) {
             BleedingScythesItems.init();
 
+            ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((a)->{
+                a.add(BleedingScythesItems.bloodScythe);
+            });
         } else {
             Log.warn(LogCategory.GENERAL, "\n* * * * *\nYou don't have Server-Side Scythes installed! The Blood Scythe will not appear ingame.\nYou can safely ignore all upcoming errors related to the blood scythe.\nInstall SSS here - https://modrinth.com/mod/server-side-scythes\n* * * * *");
         }

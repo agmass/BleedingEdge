@@ -42,9 +42,10 @@ public abstract class PlayerEntityMixin {
 
                 if (FabricLoader.getInstance().isModLoaded("scythes")) {
                     if (source.getWeaponStack().getItem().equals(BleedingScythesItems.bloodScythe)) {
-                        addStatusEffect(new StatusEffectInstance(statuseffectRegistry.getEntry(BleedingScythesEffects.DRAIN), 25, 0));
+                        int charge = (int) Math.min(amount, 1);
+                        addStatusEffect(new StatusEffectInstance(statuseffectRegistry.getEntry(BleedingScythesEffects.DRAIN), 50*charge, 0));
                         if (source.getAttacker() instanceof LivingEntity spe)
-                            spe.addStatusEffect(new StatusEffectInstance(statuseffectRegistry.getEntry(BleedingScythesEffects.FUNNEL), 25, 0));
+                            spe.addStatusEffect(new StatusEffectInstance(statuseffectRegistry.getEntry(BleedingScythesEffects.FUNNEL), 50*charge, 0));
                     }
                 }
                 if (source.getWeaponStack().getEnchantments().getEnchantments().contains(enchantRegistry.getEntry(enchantRegistry.get(BleedingEdgeEnchants.BLEEDING_EDGE)))) {

@@ -2,7 +2,7 @@
   "enchantment.bleeding_edge.bleeding_edge": "Bleeding Edge",
   "item.scythes.blood_scythe": "Blood Scythe",
   "item.bleedingedge.blood": "Blood",
-  "item.bleedingedge.blood_block": "Blood Block",
+  "block.bleedingedge.blood_block": "Blood Block",
   "item.bleedingedge.empty_potion_syringe": "Empty Potion Syringe",
   "item.bleedingedge.potion_syringe": "Potion Syringe",
   "item.bleedingedge.blood_apple": "Blood Apple"
