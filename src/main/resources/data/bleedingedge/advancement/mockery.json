@@ -1,0 +1,28 @@
+{
+  "parent": "bleedingedge:blood",
+  "display": {
+    "title": {
+      "text": "Mockery"
+    },
+    "description": {
+      "text": "Reveal a warden with a Blood Eye."
+    },
+    "icon": {
+      "id": "minecraft:sculk"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "aaa": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "aaa"
+    ]
+  ]
+}

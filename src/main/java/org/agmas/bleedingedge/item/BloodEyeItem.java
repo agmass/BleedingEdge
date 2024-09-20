@@ -4,15 +4,18 @@ import eu.pb4.polymer.common.api.PolymerCommonUtils;
 import eu.pb4.polymer.core.api.item.PolymerItem;
 import eu.pb4.polymer.resourcepack.api.PolymerModelData;
 import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.mob.WardenEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -23,6 +26,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import org.agmas.bleedingedge.BleedingEdgeAdvancements;
 import org.jetbrains.annotations.Nullable;
 
 public class BloodEyeItem extends Item implements PolymerItem {
@@ -40,6 +44,11 @@ public class BloodEyeItem extends Item implements PolymerItem {
             world.playSound((PlayerEntity) null,user.getBlockPos(), SoundEvents.ENTITY_EVOKER_PREPARE_WOLOLO, SoundCategory.MASTER,1,1);
             user.getStackInHand(hand).decrementUnlessCreative(1,user);
             entities.forEach((e)->{
+                if (e instanceof WardenEntity) {
+                    if (user instanceof ServerPlayerEntity spe) {
+                        spe.getAdvancementTracker().grantCriterion(BleedingEdgeAdvancements.EYESEEYOU, "aaa");
+                    }
+                }
                 if (e instanceof ServerPlayerEntity spe) {
                     spe.sendMessage(Text.literal("You were revealed by a blood eye..").formatted(Formatting.RED), true);
                 }

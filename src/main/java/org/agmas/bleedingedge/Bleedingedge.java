@@ -35,6 +35,7 @@ public class Bleedingedge implements ModInitializer {
             a.add(BleedingEdgeItems.BLOOD_EYE);
             a.add(BleedingEdgeItems.EMPTY_POTION_SYRINGE);
         });
+        ServerLifecycleEvents.SERVER_STARTED.register(BleedingEdgeAdvancements::initialize);
         PolymerResourcePackUtils.addModAssets("bleedingedge");
 
 
