@@ -15,11 +15,7 @@
     ]
   },
   "mixins": [
-    "bleedingedge.mixins.json",
-    {
-      "config": "bleedingedge.client.mixins.json",
-      "environment": "client"
-    }
+    "bleedingedge.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",

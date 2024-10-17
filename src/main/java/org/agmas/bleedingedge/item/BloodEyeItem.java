@@ -2,6 +2,7 @@ package org.agmas.bleedingedge.item;
 
 import eu.pb4.polymer.common.api.PolymerCommonUtils;
 import eu.pb4.polymer.core.api.item.PolymerItem;
+import eu.pb4.polymer.networking.api.server.PolymerServerNetworking;
 import eu.pb4.polymer.resourcepack.api.PolymerModelData;
 import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
 import net.minecraft.advancement.AdvancementEntry;
@@ -15,6 +16,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.nbt.NbtInt;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -27,6 +29,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.agmas.bleedingedge.BleedingEdgeAdvancements;
+import org.agmas.bleedingedge.Bleedingedge;
 import org.jetbrains.annotations.Nullable;
 
 public class BloodEyeItem extends Item implements PolymerItem {
@@ -69,6 +72,10 @@ public class BloodEyeItem extends Item implements PolymerItem {
 
     @Override
     public Item getPolymerItem(ItemStack itemStack, @Nullable ServerPlayerEntity player) {
-        return Items.ENDER_EYE;
+        if (PolymerServerNetworking.getMetadata(player.networkHandler, Bleedingedge.REGISTER_PACKET, NbtInt.TYPE) == NbtInt.of(1)) {
+            return this;
+        } else {
+            return Items.ENDER_EYE;
+        }
     }
 }

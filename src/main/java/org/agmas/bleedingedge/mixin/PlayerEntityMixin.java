@@ -43,9 +43,33 @@ public abstract class PlayerEntityMixin {
                 if (FabricLoader.getInstance().isModLoaded("scythes")) {
                     if (source.getWeaponStack().getItem().equals(BleedingScythesItems.bloodScythe)) {
                         int charge = (int) Math.min(amount, 1);
-                        addStatusEffect(new StatusEffectInstance(statuseffectRegistry.getEntry(BleedingScythesEffects.DRAIN), 50*charge, 0));
-                        if (source.getAttacker() instanceof LivingEntity spe)
-                            spe.addStatusEffect(new StatusEffectInstance(statuseffectRegistry.getEntry(BleedingScythesEffects.FUNNEL), 50*charge, 0));
+                        addStatusEffect(new StatusEffectInstance(statuseffectRegistry.getEntry(BleedingScythesEffects.DRAIN), 25*charge, 0) {
+                            @Override
+                            public boolean shouldShowIcon() {
+                                return false;
+                            }
+
+                            @Override
+                            public boolean isAmbient() {
+                                return true;
+                            }
+                        });
+                        if (source.getAttacker() instanceof LivingEntity spe) {
+                            StatusEffectInstance inst = new StatusEffectInstance(statuseffectRegistry.getEntry(BleedingScythesEffects.FUNNEL), 25 * charge, 0) {
+                                @Override
+                                public boolean shouldShowIcon() {
+                                    return false;
+                                }
+
+                                @Override
+                                public boolean isAmbient() {
+                                    return true;
+                                }
+
+
+                            };
+                            spe.addStatusEffect(inst);
+                        }
                     }
                 }
                 if (source.getWeaponStack().getEnchantments().getEnchantments().contains(enchantRegistry.getEntry(enchantRegistry.get(BleedingEdgeEnchants.BLEEDING_EDGE)))) {

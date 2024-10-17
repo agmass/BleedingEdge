@@ -20,7 +20,7 @@ public class BleedingScythesItems
                         BloodMaterial.INSTANCE,
                         "blood_scythe",
                         Items.GOLDEN_HOE,
-                        "bleedingedge"),
+                        "scythes"),
                 "blood_scythe");
 
 

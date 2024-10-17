@@ -20,7 +20,7 @@ public class DrainEffect extends StatusEffect implements PolymerStatusEffect {
         entity.damage(entity.getDamageSources().magic(), 0.4f);
         if (entity.getAttacker() instanceof ServerPlayerEntity spe) {
             if (spe.hasStatusEffect(spe.getRegistryManager().get(RegistryKeys.STATUS_EFFECT).getEntry(BleedingScythesEffects.FUNNEL))) {
-                spe.heal(0.4f);
+                spe.heal(0.15f);
             }
         }
         return super.applyUpdateEffect(entity, amplifier);

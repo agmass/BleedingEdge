@@ -6,5 +6,7 @@
   "item.bleedingedge.empty_potion_syringe": "Empty Potion Syringe",
   "item.bleedingedge.potion_syringe": "Potion Syringe",
   "item.bleedingedge.blood_apple": "Blood Apple",
-  "item.bleedingedge.blood_eye": "Blood Eye"
+  "item.bleedingedge.blood_eye": "Blood Eye",
+  "effect.bleedingedge.funnel": "Funnel",
+  "effect.bleedingedge.drain": "Drain"
 }
