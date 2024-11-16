@@ -40,7 +40,8 @@ public class EmptyPotionSyringe extends Item implements PolymerItem {
             user.clearStatusEffects();
             var potionComponent = new PotionContentsComponent(Optional.empty(), Optional.empty(), statusEffectInstances);
             filledPotionVial.set(DataComponentTypes.POTION_CONTENTS, potionComponent);
-            user.setStackInHand(hand, filledPotionVial);
+            user.getStackInHand(hand).decrementUnlessCreative(1, user);
+            user.getInventory().insertStack(filledPotionVial);
         }
         return super.use(world, user, hand);
     }

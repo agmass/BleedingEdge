@@ -72,6 +72,7 @@ public class BloodEyeItem extends Item implements PolymerItem {
 
     @Override
     public Item getPolymerItem(ItemStack itemStack, @Nullable ServerPlayerEntity player) {
+        if (player == null) return this;
         if (PolymerServerNetworking.getMetadata(player.networkHandler, Bleedingedge.REGISTER_PACKET, NbtInt.TYPE) == NbtInt.of(1)) {
             return this;
         } else {

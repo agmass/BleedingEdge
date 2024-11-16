@@ -12,6 +12,9 @@
   "entrypoints": {
     "main": [
       "org.agmas.bleedingedge.Bleedingedge"
+    ],
+    "client": [
+      "org.agmas.bleedingedge.BleedingScythesClient"
     ]
   },
   "mixins": [

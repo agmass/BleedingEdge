@@ -1,6 +1,5 @@
 package org.agmas.bleedingedge;
 
-import eu.pb4.polymer.networking.api.client.PolymerClientNetworking;
 import eu.pb4.polymer.networking.api.server.PolymerServerNetworking;
 import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
 import net.fabricmc.api.ModInitializer;
@@ -26,7 +25,6 @@ public class Bleedingedge implements ModInitializer {
     public void onInitialize() {
         BleedingEdgeEnchants.initialize();
         PolymerServerNetworking.setServerMetadata(REGISTER_PACKET, NbtInt.of(1));
-        PolymerClientNetworking.setClientMetadata(REGISTER_PACKET, NbtInt.of(1));
         BleedingEdgeItems.initialize();
         BleedingEdgeBlocks.initialize();
 

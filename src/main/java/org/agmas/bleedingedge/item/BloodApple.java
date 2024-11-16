@@ -25,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class BloodApple extends Item implements PolymerItem {
 
-        PolymerModelData modelData = PolymerResourcePackUtils.requestModel(Items.GOLDEN_APPLE, Identifier.of("bleedingedge","item/blood_apple"));
+        PolymerModelData modelData = PolymerResourcePackUtils.requestModel(Items.APPLE, Identifier.of("bleedingedge","item/blood_apple"));
 
     public BloodApple(Settings settings) {
         super(settings);
@@ -40,6 +40,7 @@ public class BloodApple extends Item implements PolymerItem {
 
     @Override
     public Item getPolymerItem(ItemStack itemStack, @Nullable ServerPlayerEntity player) {
+        if (player == null) return this;
         if (PolymerServerNetworking.getMetadata(player.networkHandler, Bleedingedge.REGISTER_PACKET, NbtInt.TYPE) == NbtInt.of(1)) {
             return this;
         } else {

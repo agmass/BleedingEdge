@@ -1,20 +1,10 @@
 {
   "anvil_cost": 1,
   "description": {
-    "translate": "enchantment.bleeding_edge.bleeding_edge"
+    "translate": "enchantment.bleedingedge.bleeding_edge"
   },
   "effects": {
     "minecraft:damage": [
-      {
-        "effect": {
-          "type": "minecraft:add",
-          "value": {
-            "type": "minecraft:linear",
-            "base": 1.0,
-            "per_level_above_first": 0.5
-          }
-        }
-      }
     ]
   },
   "exclusive_set": "#minecraft:exclusive_set/damage",
